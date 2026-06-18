@@ -1,0 +1,13 @@
+# Keep the build image lean and deterministic: exclude logs, prior run outputs,
+# Python caches, and any leftover build artifacts (the image rebuilds from source).
+bench_logs/
+**/__pycache__/
+**/*.pyc
+**/.vscode/
+# hol-lambdas build outputs (regenerated inside the image)
+hol-lambdas/install/
+hol-lambdas/pgdata/
+hol-lambdas/tmp_install/
+hol-lambdas/**/*.o
+hol-lambdas/**/*.so
+hol-lambdas/**/*.bc

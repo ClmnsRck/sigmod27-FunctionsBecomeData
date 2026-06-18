@@ -1,0 +1,58 @@
+# ---------------------------------------------------------------------------
+# Functions Become Data artifact .gitignore
+# Track: source (hol-lambdas/), generated SQL inputs (benchmarks/), setup,
+#        and additional-tests/ + results/ scripts (.sql/.py/.sh).
+# Ignore: build artifacts, caches, editor/OS files, and all benchmark run
+#         outputs (result CSVs and logs), which are kept local, not committed.
+# PostgreSQL's own per-directory .gitignore files already cover most of its
+# generated files; the patterns below just catch the rest in the combined tree.
+# ---------------------------------------------------------------------------
+
+# --- Compiled / build outputs ---
+*.o
+*.so
+*.bc
+*.a
+*.dylib
+
+# --- PostgreSQL configure/make output inside the fork ---
+hol-lambdas/install/
+hol-lambdas/pgdata/
+hol-lambdas/tmp_install/
+hol-lambdas/config.status
+hol-lambdas/config.log
+hol-lambdas/config.cache
+hol-lambdas/GNUmakefile
+hol-lambdas/src/Makefile.global
+hol-lambdas/src/include/pg_config.h
+hol-lambdas/src/include/pg_config_ext.h
+hol-lambdas/src/include/pg_config_os.h
+hol-lambdas/src/port/pg_config_paths.h
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# --- Benchmark run outputs (kept local, NOT committed) ---
+bench_logs/
+# Result CSVs and run logs under the artifact's own test/result dirs.
+# (Scoped to these dirs so the Postgres fork's own *.csv test data under
+#  hol-lambdas/ stays tracked.)
+additional-tests/**/*.csv
+additional-tests/**/*.log
+additional-tests/**/*logs.txt
+additional-tests/**/results/
+results/**/*.csv
+results/**/*.txt
+results/**/*.log
+results/bench_*/
+results/result_agg/
+
+# --- Editor / IDE / OS / tooling ---
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
