@@ -1,0 +1,21 @@
+# the image builds the engine itself and starts without runs
+.git/
+bench_logs/
+benchmarks/
+results/*/
+**/__pycache__/
+**/*.pyc
+hol-lambdas/install/
+hol-lambdas/pgdata/
+hol-lambdas/pgdata-temp/
+hol-lambdas/tmp_install/
+additional-tests/equivalence/pgdata_equiv/
+**/*.o
+**/*.so
+**/*.bc
+**/*.a
+hol-lambdas/config.status
+hol-lambdas/config.log
+hol-lambdas/GNUmakefile
+hol-lambdas/src/Makefile.global
+hol-lambdas/src/Makefile.port

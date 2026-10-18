@@ -1,0 +1,76 @@
+# ---------------------------------------------------------------- engine build
+# Build outputs of hol-lambdas/ (PostgreSQL's own root .gitignore, moved here;
+# the .gitignore files in its subdirectories cover the generated sources).
+*.o
+*.obj
+*.bc
+*.so
+*.so.[0-9]
+*.so.[0-9].[0-9]
+*.so.[0-9].[0-9][0-9]
+*.dylib
+*.dll
+*.exp
+*.a
+*.mo
+*.pot
+objfiles.txt
+.deps/
+*.gcno
+*.gcda
+*.gcov
+*.gcov.out
+lcov*.info
+coverage/
+coverage-html-stamp
+*.vcproj
+*.vcxproj
+win32ver.rc
+!/hol-lambdas/src/port/win32ver.rc
+*.exe
+lib*dll.def
+lib*.pc
+
+/hol-lambdas/GNUmakefile
+/hol-lambdas/config.cache
+/hol-lambdas/config.log
+/hol-lambdas/config.status
+/hol-lambdas/pgsql.sln
+/hol-lambdas/pgsql.sln.cache
+/hol-lambdas/Debug/
+/hol-lambdas/Release/
+/hol-lambdas/tmp_install/
+/hol-lambdas/portlock/
+
+# the build's install prefix and the benchmark clusters
+/hol-lambdas/install/
+/hol-lambdas/pgdata/
+/hol-lambdas/pgdata-temp/
+
+# ------------------------------------------------------------------ benchmarks
+# generated benchmark SQL (generate_benchmarks.py, generate_usecase_benchmarks.py)
+/benchmarks/
+
+# benchmark runs: logs, results, aggregated curves, figure CSVs
+/bench_logs/
+/results/bench_*/
+/results/usecase_*/
+/results/timing_*/
+/results/result_agg/
+/results/paper_csv/
+
+# equivalence check: its own cluster and server log
+/additional-tests/equivalence/pgdata_equiv/
+/additional-tests/equivalence/backend.log
+
+# timing tests: their logs and output
+/additional-tests/*/results/
+/additional-tests/*/bench-timing*.txt
+/additional-tests/*/*.csv
+
+# ---------------------------------------------------------------------- local
+__pycache__/
+*.py[cod]
+.vscode/
+.idea/
+.claude/
